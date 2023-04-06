@@ -7,6 +7,7 @@ inkscape_location = "C:/Program Files/Inkscape/bin/inkscape.com"
 
 template_file = open("template.svg", "r")
 template = string.Template(template_file.read())
+template_file.close()
 
 data_file = open("elements.csv", "r")
 data = {}
@@ -24,3 +25,5 @@ for element in data_file.readlines():
 
 for process in processes:
     process.wait()
+
+data_file.close()
